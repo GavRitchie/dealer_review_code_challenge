@@ -16,6 +16,8 @@ describe ReviewScraper do
   before do
     stub_request(:get, URI.encode("#{ReviewScraper::DEALER_SEARCH_URL}#{dealer_name}")).
       to_return(status: 200, body: stubbed_response)
+    stub_request(:get, "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_95.0.4638").
+      to_return(status: 200)
     Watir::Browser.any_instance.stub(:goto)
     Watir::Browser.any_instance.stub(:html).and_return(stubbed_http_body)
     described_class.any_instance.stub(:user_agent).and_return('Fake User Agent')

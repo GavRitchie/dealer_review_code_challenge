@@ -1,7 +1,7 @@
 require_relative './review_scraper'
 require_relative './review_sentiment_analyzer'
 
-DEALER = 'McKaig'
+DEALER = 'McKaig Chevrolet Buick'
 REVIEWS_TO_PRINT = 3.freeze
 
 review_scrape_result = ReviewScraper.scrape_reviews(DEALER)
